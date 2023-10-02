@@ -64,7 +64,7 @@ class Hangman:
         # Convert the letter to lowercase
         letter = letter.lower()
         if letter in self.word:
-            print(f"Good guess,  letter {letter} is in the word")
+            # print(f"Good guess, letter {letter} is in the word")
             # Get the indices of the guessed letter
             letter_indices = [pos for pos, char in enumerate(self.word) if char == letter]
             for index in letter_indices:
