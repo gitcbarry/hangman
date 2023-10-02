@@ -75,11 +75,11 @@ class Hangman:
                 print("Congratulations! You won!")
                 sys.exit(0)
                 return
-            #print(self.word_guessed)
+            print(self.word_guessed)
         else:
             self.num_lives -= 1 
-            #print(f"Sorry, {letter} is not in the word.")
-            #print(f"You have {self.num_lives} lives remaining. Try again.")  
+            print(f"Sorry, {letter} is not in the word.")
+            print(f"You have {self.num_lives} lives remaining. Try again.")  
             if self.num_lives == 0:
                 print(f"You lost! The word was {self.word}")
                 sys.exit(0)
@@ -107,7 +107,7 @@ class Hangman:
                 #raise ValueError
                 continue
             elif letter.isalpha() == False:
-                #print("Oops! That is not a valid input. Input is not a letter")  
+                print("Oops! That is not a valid input. Input is not a letter")  
                 #raise TypeError
                 continue
         self.check_letter(letter)
