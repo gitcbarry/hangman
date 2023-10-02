@@ -97,16 +97,19 @@ class Hangman:
             
             letter = input("please input a letter ")  
             if letter in self.list_letters:
-                print(f"{letter} was already tried")
+                #print(f"{letter} was already tried")
+                continue
             elif len(letter) == 1 and letter.isalpha():
                 self.list_letters.append(letter)
                 break  
             elif len(letter) != 1:
-                print("Please, enter just one character")
+                #print("Please, enter just one character")
                 #raise ValueError
+                continue
             elif letter.isalpha() == False:
-                print("Oops! That is not a valid input. Input is not a letter")  
+                #print("Oops! That is not a valid input. Input is not a letter")  
                 #raise TypeError
+                continue
         self.check_letter(letter)
 
         pass
