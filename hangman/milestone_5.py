@@ -75,11 +75,11 @@ class Hangman:
                 print("Congratulations! You won!")
                 sys.exit(0)
                 return
-            print(self.word_guessed)
+            #print(self.word_guessed)
         else:
             self.num_lives -= 1 
-            print(f"Sorry, {letter} is not in the word.")
-            print(f"You have {self.num_lives} lives remaining. Try again.")  
+            #print(f"Sorry, {letter} is not in the word.")
+            #print(f"You have {self.num_lives} lives remaining. Try again.")  
             if self.num_lives == 0:
                 print(f"You lost! The word was {self.word}")
                 sys.exit(0)
@@ -97,13 +97,13 @@ class Hangman:
             
             letter = input("please input a letter ")  
             if letter in self.list_letters:
-                #print(f"{letter} was already tried")
+                print(f"{letter} was already tried")
                 continue
             elif len(letter) == 1 and letter.isalpha():
                 self.list_letters.append(letter)
                 break  
             elif len(letter) != 1:
-                #print("Please, enter just one character")
+                print("Please, enter just one character")
                 #raise ValueError
                 continue
             elif letter.isalpha() == False:

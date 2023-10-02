@@ -50,9 +50,9 @@ class Hangman:
 
         # TODO 2: Initialize the attributes as indicated in the docstring
         # TODO 2: Print two message upon initialization:
-        # 1. "The mystery word has {num_letters} characters"
+        # 1. "The mistery word has {num_letters} characters"
         # 2. {word_guessed}
-        print(f"The mystery word has {self.num_letters} unique characters")
+        print(f"The mistery word has {self.num_letters} unique characters")
         print(self.word_guessed)
         pass
 
@@ -81,10 +81,11 @@ class Hangman:
                 print("Congratulations! You won!")
                 sys.exit(0)
                 return
-            print(self.word_guessed)
         else:
             self.num_lives -= 1 
-            print(f"Sorry, {letter} is not in the word. {self.num_lives} lives remaining. Try again.")
+            #print(f"Sorry, {letter} is not in the word.")
+            #print(f"You have {self.num_lives} lives remaining. Try again.")  
+
             if self.num_lives == 0:
                 print(f"You lost! The word was {self.word}")
                 sys.exit(0)
@@ -106,18 +107,23 @@ class Hangman:
         '''
         while True:
             
-            letter = input("please input a letter ")  
+            letter = input("Please input a letter: ")  
             if letter in self.list_letters:
                 #print(f"The letter {letter} has already been tried")
+                print(f"{letter} was already tried")
+                continue
             elif len(letter) == 1 and letter.isalpha():
                 self.list_letters.append(letter)
                 break  
             elif len(letter) != 1:
+                print("Please, enter just one character")
                 #print("Oops! That is not a valid input. Input is greater than one letter")
                 #raise ValueError
+                continue
             elif letter.isalpha() == False:
                 #print("Oops! That is not a valid input. Input is not a letter")  
                 #raise TypeError
+                continue
         self.check_letter(letter)
 
         # TODO 1: Ask the user for a letter iteratively until the user enters a valid letter
