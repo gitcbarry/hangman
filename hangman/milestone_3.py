@@ -23,4 +23,12 @@ def ask_for_input():
   check_guess(guess)
   
 
+  word_guessed = ["_" for i in milestone_2.word]
+  print(word_guessed)
+  
+  guess_indices = [pos for pos, char in enumerate(milestone_2.word) if char == guess]
+  for index in guess_indices:
+    word_guessed[index] = guess 
+    print(word_guessed)
+
 ask_for_input()
